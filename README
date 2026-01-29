@@ -1,0 +1,49 @@
+Project: GCF
+Programmer: Caniah Mayo
+Professor: Dr. Lee
+File Created: 2026.01.06
+File Updated: 2026.01.06
+
+Project Information: 
+
+	The purpose of this project is to determine the GCF of 3 large numbers:
+
+		5^2000 - 24x999 - 25
+		5^2001 - 24x1000 - 25
+		5^2002 - 24x1001 - 25
+
+	The program completes this task using 2 different methods:
+
+		1.) Using python's math.gcd function
+		2.) Using the logical form:
+			- Take the common terms from the 3 large numbers 
+			  (x=1000, y=5^2) and factor them out.
+				- 5^2(1001) - (5^2-1)1000 - 5^2
+			- Substitute the variables into the equation
+				- y^(x+1) - yx + x - y
+			- Use that equation as a function gcf_logical(x,y)
+			- From here we can break this down into 2 methods
+				a.) For each of the 3 large numbers plug in 
+				    0, 1, and 2 for x respectively and use the
+				    math.gcd function to determine the gcd of 
+				    the factors.
+				b.) Plugging in x=1 which will simply give you
+				    the GCF
+
+	Additionally the program uses python's tracemalloc and time library's to
+	track runtime and memory usage and prints both to the screen. 
+
+List of Source Code:
+
+	gcf.py: The main point of entry. Contains the full program.
+	README: Contains a description of the project and its use.
+
+How to Run:
+
+	python3 gcf.py
+
+Known Bugs:
+
+	The program must be terminated manually due to gcf_standard function. 
+	Because of the way that the function calculates the GCF, the program 
+	takes an unknown time to run. 
